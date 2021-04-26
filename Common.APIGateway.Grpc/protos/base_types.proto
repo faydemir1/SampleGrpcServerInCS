@@ -1,0 +1,33 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Common.APIGateway.Grpc";
+
+package base_type;
+
+message QueueMessage {
+    string uniqueId = 1;
+    string businessKey = 2;
+    string base64Data = 3;
+} 
+
+message Result {
+  string exception = 1;
+  string errorMessage = 2;
+  string errorCode = 3;
+  Severity severity = 4;
+}
+
+message ResponseBase {
+     repeated Result results = 1;     
+     bool success = 2;
+     string businessKey = 3;
+}
+
+ enum Severity {
+    Error = 0;
+    Warning = 1;
+    Information = 2;
+    BusinessError = 3;
+    LowerError = 4;
+}
+

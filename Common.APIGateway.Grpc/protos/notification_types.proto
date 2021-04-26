@@ -1,0 +1,21 @@
+﻿syntax = "proto3";
+
+import "base_types.proto"; //For importing base types such as ResponseBase
+
+option csharp_namespace = "Common.APIGateway.Grpc";
+
+package notification_type;
+
+
+message NotificationQueueRequest {
+    string uniqueId = 1;
+    string businessKey = 2;   
+    string data = 3;  
+    int32 countId = 4;
+} 
+
+message NotificationQueueResponse {
+    int32 value = 1;
+    bool success = 2;   
+    repeated base_type.Result results = 3;  
+} 

@@ -1,0 +1,18 @@
+﻿syntax = "proto3";
+
+import "base_types.proto"; //For importing base types such as ResponseBase
+
+option csharp_namespace = "Common.APIGateway.Grpc";
+
+package kafka_type;
+
+message KafkaInsertRequest {
+    base_type.QueueMessage insertQueueMessage = 1;
+    int32 countId = 2;
+} 
+
+message KafkaInsertResponse {
+    int32 value = 1;
+    bool success = 2;   
+    repeated base_type.Result results = 3;  
+} 

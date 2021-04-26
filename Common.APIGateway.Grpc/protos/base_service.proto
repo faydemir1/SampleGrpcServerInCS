@@ -1,0 +1,15 @@
+﻿syntax = "proto3";
+
+import "kafka_types.proto";
+import "notification_types.proto";
+
+option csharp_namespace = "Common.APIGateway.Grpc";
+
+package grpc_api_gateway_service;
+
+service GrpcAPIGatewayService {
+  //Sends a VIP SMS 
+  rpc InsertFromKafka (kafka_type.KafkaInsertRequest) returns (kafka_type.KafkaInsertResponse);
+  rpc SendNotification (notification_type.NotificationQueueRequest) returns (notification_type.NotificationQueueResponse);
+}
+
