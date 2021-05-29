@@ -1,4 +1,4 @@
-﻿/*  Copyright 2021 KUVEYT TÜRK PARTICIPATION BANK INC.
+ /*  
  *
  *  Author: Fikri Aydemir
  *  Date  :	10/04/2020 15:14
